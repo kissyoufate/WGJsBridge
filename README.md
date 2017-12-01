@@ -23,11 +23,14 @@ import "UIWebView+WGJsBridge.h"
     [webview handleJsFunctionWithFunctionName:@"targetJsFunctionName" withParamsArray:@[param1,param2,param3,...]];
 
 *注意事项
+
 targetJsFunctionName 为js中需要调用的方法,不需要传入(),切记!
+
 参数为数组的形势传入,在js方法中进行接收
 
 
 jsvascript调用原生object-c方法
+
 *前提 需要在网页完全加载完毕的代理方法中进行方法的调用
 
 //1.不带参数的方法调用
