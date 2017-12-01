@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>首页</title>
+</head>
+<body>
+	<h1>本网页为本地网页,使用WGJsBridge工具进行js调用oc,oc调用js</h1>
+
+    <input type="button" value="调用oc方法" onclick="handleOc()">
+    
+    <input type="button" value="调用oc方法 并传参" onclick="handleOcWithParams()">
+
+	<p id="p">这里的文字即将被oc调用的js修改</p>
+</body>
+</html>
+
+<script type="text/javascript">
+	//oc->js
+	function handleJs(content1,content2){
+		var p = document.getElementById("p");
+		p.innerText = "我已经被修改" + content1==''?'':content1 + "111" + content2==''?'':content2;
+	}
+
+	//js->oc
+	function handleOc(){
+        //oc中要执行的方法名字
+		doOcFunction();
+	}
+
+    //js->oc 并传入参数
+    function handleOcWithParams(param1,param2,param3){
+        //oc中要执行的方法名字 和对应的参数,请按顺序传即可
+        doOcFunctionWithParams('参数1','参数2','参数3');
+    }
+</script>

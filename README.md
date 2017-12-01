@@ -13,6 +13,7 @@ Hot to use:
 import "UIWebView+WGJsBridge.h"
 
 原生object-c调用javascript方法
+
 //1.不传入参数的调用
 
     [webview handleJsFunctionWithFunctionName:@"targetJsFunctionName" withParamsArray:nil];
