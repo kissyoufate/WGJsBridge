@@ -2,10 +2,15 @@
 一个js脚本语言与原生oc相互调用的工具类,采用分类的形势编写,轻量级无侵入性,回调进行,注释详尽,有bug请留言,适用于ios7.0以上的系统版本
 傻瓜式调用,一句话相互调用题,拒绝长篇大论
 
+
+Hot to use:
+
 前提:
 下载工程源码
+
 将WGJsBridgeTool下的两个文件拖入工程
-引入UIWebView+WGJsBridge.h头文件
+
+import "UIWebView+WGJsBridge.h"
 
 原生object-c调用javascript方法
 //1.不传入参数的调用
@@ -35,6 +40,7 @@ jsvascript调用原生object-c方法
     }];
    
 //2.1 带参数的方法调用
+
 //2.2 targetOcFuntion只需要写oc方法的主名字,无需后面带参的部分
 
     [_localWebView handleOcFunctionWithJsFunctionName:@"targetOcFuntion" andOcFunctionBlock:^(id object) {
@@ -42,5 +48,6 @@ jsvascript调用原生object-c方法
         NSArray *arr = (NSArray *)object;
         [self targetOcFuntion:arr];
     }];
+    
 
 
