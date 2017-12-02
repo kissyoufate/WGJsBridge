@@ -37,7 +37,7 @@ static NSString *DOCUMENTSTRING = @"documentView.webView.mainFrame.javaScriptCon
     [self stringByEvaluatingJavaScriptFromString:functionName];
 }
 
-- (void)handleOcFunctionWithJsFunctionName:(NSString *)jsFunctionName andOcFunctionBlock:(functionHandle)functionHandle{
+-(void)handleOcFunctionWithOcFunctionName:(NSString *)jsFunctionName andOcFunctionBlock:(functionHandle)functionHandle{
     if (!jsFunctionName || [jsFunctionName isEqualToString:@""]) {
         NSLog(@"没有接收到方法名字");
         return;

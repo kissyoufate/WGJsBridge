@@ -74,7 +74,7 @@
 - (void)webViewDidFinishLoad:(UIWebView *)webView{
     NSLog(@"网页加载完毕后才能使用js调用oc方法");
     
-    [_localWebView handleOcFunctionWithJsFunctionName:@"doOcFunction" andOcFunctionBlock:^(id object) {
+    [_localWebView handleOcFunctionWithOcFunctionName:@"doOcFunction" andOcFunctionBlock:^(id object) {
         dispatch_async(dispatch_get_main_queue(), ^{
             NSArray *arr = (NSArray *)object;
             for (id obj in arr) {
@@ -84,7 +84,7 @@
         });
     }];
     
-    [_localWebView handleOcFunctionWithJsFunctionName:@"doOcFunctionWithParams" andOcFunctionBlock:^(id object) {
+    [_localWebView handleOcFunctionWithOcFunctionName:@"doOcFunctionWithParams" andOcFunctionBlock:^(id object) {
         NSArray *arr = (NSArray *)object;
         [self doOcFunctionWithParams:arr];
     }];

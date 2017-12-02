@@ -27,6 +27,6 @@ typedef void(^functionHandle)(id object);
  *  @param jsFunctionName js中调用oc的方法,该方法需要在所调用的class实现,并且该方法名字必须在js与oc类中保持相同
  *  @param functionHandle 调用的实现方法回调,如果需要执行UI相关的操作,必须回到主线程再执行
  */
--(void)handleOcFunctionWithJsFunctionName:(NSString *)jsFunctionName andOcFunctionBlock:(functionHandle)functionHandle;
+-(void)handleOcFunctionWithOcFunctionName:(NSString *)jsFunctionName andOcFunctionBlock:(functionHandle)functionHandle;
 
 @end

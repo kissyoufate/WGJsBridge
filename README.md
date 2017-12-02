@@ -35,7 +35,7 @@ jsvascript调用原生object-c方法
 
 //1.不带参数的方法调用
 
-    [webView handleOcFunctionWithJsFunctionName:@"targetOcFuntion" andOcFunctionBlock:^(id object) {
+    [webView handleOcFunctionWithOcFunctionName:@"targetOcFuntion" andOcFunctionBlock:^(id object) {
         //该方法为非主线程执行,如果需要在方法中操作UI则需要返回主线程!
         dispatch_async(dispatch_get_main_queue(), ^{
             //需要调用的oc方法
@@ -47,7 +47,7 @@ jsvascript调用原生object-c方法
 
 //2.2 targetOcFuntion只需要写oc方法的主名字,无需后面带参的部分
 
-    [_localWebView handleOcFunctionWithJsFunctionName:@"targetOcFuntion" andOcFunctionBlock:^(id object) {
+    [_localWebView handleOcFunctionWithOcFunctionName:@"targetOcFuntion" andOcFunctionBlock:^(id object) {
         //如果该js方法有参数传入,则会自动返回一个泛型数组,请自行遍历取出所需要的参数
         NSArray *arr = (NSArray *)object;
         [self targetOcFuntion:arr];
